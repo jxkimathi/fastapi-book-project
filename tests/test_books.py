@@ -51,6 +51,6 @@ def test_delete_book():
     response = client.get("/books/3")
     assert response.status_code == 404
 
-def test_read_book(client):
-    response = client.get(f"/api/v1/books/1")
-    assert response.status_code[200, 404]
+def test_read_book():
+    response = client.get("/api/v1/books/1")
+    assert response.status_code in [200, 404]
